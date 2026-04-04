@@ -1,7 +1,6 @@
 # DevOps-Python-Toolkit
 A collection of small Python projects focused on cloud, automation and networking tools.
 
---
 
 ## 🛜 Networking Tools
  - Portscan simulator - check if a given port is open on given hosts.
