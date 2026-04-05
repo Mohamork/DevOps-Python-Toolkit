@@ -1,6 +1,6 @@
 # DevOps Python Toolkit
 
-This repository contains Python scripts and mini-projects focused on DevOps, automation, cloud, and networking tasks.  
+This repository contains Python scripts and mini-projects focused on **DevOps**, **automation**, **cloud**, and **networking tasks**.  
 
 The structure separates learning experiments, small projects, and polished showcase tools.
 
