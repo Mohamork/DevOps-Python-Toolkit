@@ -75,6 +75,10 @@ if __name__ == '__main__':
 
         print()
 
+    else: 
+
+        print('Detected no critical ports.')   
+
     if non_critical_ports:
 
         for port in non_critical_ports:
@@ -82,3 +86,6 @@ if __name__ == '__main__':
             message = f'Non-critical port: {port}'
 
             print(message)
+    else:
+
+        print('Detected no non-critical ports.')        
