@@ -20,49 +20,65 @@ CRITICAL_PORTS = {
     995: 'POPS'
     }
 
-# Prepare different for categorising port numbers later
-user_selected_ports = []
-critical_ports = []
-non_critical_ports = []
-
-user_input = input('Type one or more port numbers separated by comma "," > ')
-
-user_input = user_input.split(',')
-
-for value in user_input:
-
-    try:
-
-        port = int(value)
-
-        user_selected_ports.append(port)
-
-    except ValueError:
-
-        continue
 
 # Check if user_input is a critical port
 
-for port in user_selected_ports:
+def is_port_critical(user_selected_ports):
 
-    if port in CRITICAL_PORTS:
+    critical_ports = []
+    non_critical_ports = []
 
-        critical_ports.append((port,CRITICAL_PORTS[port]))
-    
-    else:
-        non_critical_ports.append(port)
+    for port in user_selected_ports:
 
+        if port in CRITICAL_PORTS:
 
-for port in critical_ports:
+            critical_ports.append((port,CRITICAL_PORTS[port]))
+        
+        else:
 
-    message = f'Critical port: {port}'
+            non_critical_ports.append(port)
 
-    print(message)
+    return critical_ports,non_critical_ports        
 
-print()
+if __name__ == '__main__':
 
-for port in non_critical_ports:
+    # Ask user for port numbers
+    user_selected_ports = []
 
-    message = f'Non-critical port: {port}'
+    user_input = input('Type one or more port numbers separated by comma "," > '
+                       )
 
-    print(message)
+    user_input = user_input.split(',')
+
+    for value in user_input:
+
+        try:
+
+            port = int(value)
+
+            user_selected_ports.append(port)
+
+        except ValueError:
+
+            continue 
+
+    # Determine if ports are critical or not
+    critical_ports, non_critical_ports = is_port_critical(user_selected_ports)
+
+    if critical_ports:
+
+        for port in critical_ports:
+
+            message = f'Critical port: {port}'
+
+            print(message)
+
+        print()
+
+    if non_critical_ports:
+
+        for port in non_critical_ports:
+
+            message = f'Non-critical port: {port}'
+
+            print(message)

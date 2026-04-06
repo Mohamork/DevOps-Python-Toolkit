@@ -23,27 +23,31 @@ def check_port(host,port,timeout=2):
             result = f'{now}    Port {port} on host {host} is CLOSED'
 
             return result
-        
-ip_addresses = []
-user_input = input('Please enter an IP address > ')
 
-user_input = user_input.split(',')
-for ip in user_input:
+# Run the program
 
-    ip_addresses.append(ip.strip())
+if __name__ == '__main__':  
 
-user_input= input('Please enter a portnumber > ')
-port = int(user_input)
+    ip_addresses = []
+    user_input = input('Please enter an IP address > ')
 
-results = []
-for ip in ip_addresses:
+    user_input = user_input.split(',')
+    for ip in user_input:
 
-    results.append(check_port(ip,port))
+        ip_addresses.append(ip.strip())
 
-for result in results:
+    user_input= input('Please enter a portnumber > ')
+    port = int(user_input)
 
-    print(result)
-    print()
+    results = []
+    for ip in ip_addresses:
+
+        results.append(check_port(ip,port))
+
+    for result in results:
+
+        print(result)
+        print()
 
     
 
