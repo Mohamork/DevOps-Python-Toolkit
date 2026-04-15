@@ -1,0 +1,6 @@
+Date,ServiceName,ResourceGroup,Location,Cost
+2026-04-01,Virtual Machines,rg-app,West Europe,12.5
+2026-04-01,Storage,rg-data,North Europe,3.2
+2026-04-02,Virtual Machines,rg-app,West Europe,15.0
+2026-04-02,SQL Database,rg-db,West Europe,8.7
+2026-04-03,Storage,rg-data,North Europe,2.9
