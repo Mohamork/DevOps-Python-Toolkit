@@ -16,6 +16,7 @@ for header in headers:
     if header in output:
 
         print(header,end='\t\t')
+
 print()
 for line in data[1:4]:
 
