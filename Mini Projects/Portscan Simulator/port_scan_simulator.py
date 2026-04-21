@@ -28,21 +28,23 @@ def check_port(host,port,timeout=2):
 
 if __name__ == '__main__':  
 
-    ip_addresses = []
-    user_input = input('Please enter an IP address > ')
+    hosts = []
+    user_input = input('Enter the hostname or IP address > ')
 
     user_input = user_input.split(',')
-    for ip in user_input:
+    for host in user_input:
 
-        ip_addresses.append(ip.strip())
+        hosts.append(host.strip())
 
-    user_input= input('Please enter a portnumber > ')
+    user_input= input('Enter a portnumber > ')
     port = int(user_input)
 
+    
+    print('*'*20,'PORTSCAN RESULTS','*'*20)
     results = []
-    for ip in ip_addresses:
+    for host in hosts:
 
-        results.append(check_port(ip,port))
+        results.append(check_port(host,port))
 
     for result in results:
 
